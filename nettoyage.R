@@ -35,7 +35,9 @@ cleanAccidentFait<-function(array,index){
 
 #cleanNAValues(array)
 #args: data frame
-cleanNAValues<-function(array){
-  array[is.na(array)]<-0
-  return(array)
+cleanNAValues<-function(array,index,default){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(is.na(array[i,index])){array[i,index]<-default}
+  }
 }
