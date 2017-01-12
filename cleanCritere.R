@@ -41,3 +41,53 @@ cleanCSPFait<-function(array,index){
   }
   return(array)
 }
+
+cleanExpAnFait<-function(array,index){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(array[i,index]=="Oui"){
+      array[i,index]<-"1an"
+    }
+  }
+  return(array)
+}
+
+cleanExpPlus2Fait<-function(array,index){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(array[i,index]=="Oui"){
+      array[i,index]<-"2-4ans"
+    }
+  }
+  return(array)
+}
+
+cleanExpPlus5Fait<-function(array,index){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(array[i,index]=="Oui"){
+      array[i,index]<-"5-9ans"
+    }
+  }
+  return(array)
+}
+
+cleanExpPlus10Fait<-function(array,index){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(array[i,index]=="Oui"){
+      array[i,index]<-"10ans et +"
+    }
+  }
+  return(array)
+}
+
+cleanExpFait<-function(array,index,nindex){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(array[i,index]=="Non"){
+      array[i,index]<-array[i,nindex]
+    }
+  }
+  return(array)
+}
