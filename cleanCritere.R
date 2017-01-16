@@ -91,3 +91,26 @@ cleanExpFait<-function(array,index,nindex){
   }
   return(array)
 }
+
+
+cleanValues<-function(array,index){
+  n<-nrow(array)
+  c <- 0
+  for(i in 1:n){
+    if(is.na(array[i,index])){
+      c <- c +1
+    }
+  }
+  return(c)
+}
+
+compte<-function(array,index){
+  n<-nrow(array)
+  c <- 0
+  for(i in 1:n){
+    if(array[i,index] == 1){
+      c <- c +1
+    }
+  }
+  return(c)
+}
