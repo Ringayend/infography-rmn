@@ -20,3 +20,16 @@ cleanModKilo<-function(array,index){
   }
   return(array)
 }
+cleanKilo<-function(array,index){
+  n<-nrow(array)
+  for(i in 1:n){
+    if(is.na(array[i,index])){array[i,index]<-"autres"}
+    else if(array[i,index]<=10500){
+      array[i,index]<-"moinsde10500"
+    }
+    else{
+      array[i,index]<-"plusde10500"
+    }
+  }
+  return(array)
+}
